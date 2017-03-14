@@ -1,1 +1,8 @@
-search
+<h1>Need Music?</h1>
+<p class="lead">use the A2Spotify app to browse new releases and find your favorite songs</p>
+
+<form action="" method="" role="form">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search Artist..." [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()">
+    </div>
+</form>
