@@ -2,7 +2,23 @@
 <p class="lead">use the A2Spotify app to browse new releases and find your favorite songs</p>
 
 <form action="" method="" role="form">
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search Artist..." [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()">
-    </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search Artist..." [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()">
+  </div>
 </form>
+
+<div *ngIf="searchRes">
+  <div *ngFor="let artist of searchRes">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="search-res well">
+          <h4><a routerLink="/artist/{{ artist.id }}" >{{ artist.name }}</a></h4>
+          <div>
+            <strong>Genres: </strong>
+            <span *ngFor="let genre of artist.genres">{{genre}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
